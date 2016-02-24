@@ -1,0 +1,9 @@
+/*cc-app.css*/
+*{
+	box-sizing: border-box;
+}
+
+h1 {
+	text-align: center;
+	font-size: 3.5em;
+}
