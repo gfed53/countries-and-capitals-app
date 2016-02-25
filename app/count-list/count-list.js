@@ -4,3 +4,7 @@ viewsModule.config(['$routeProvider', function($routeProvider) {
 		controller : 'CountListCtrl'
 	});
 }]);
+
+viewsModule.controller('CountListCtrl', [function(){
+	console.log("This is the list of countries");
+}]);

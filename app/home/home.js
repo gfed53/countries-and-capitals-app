@@ -4,3 +4,7 @@ viewsModule.config(['$routeProvider', function($routeProvider) {
 		controller : 'HomeCtrl'
 	});
 }]);
+
+viewsModule.controller('HomeCtrl', [function(){
+	console.log("We're home");
+}]);
