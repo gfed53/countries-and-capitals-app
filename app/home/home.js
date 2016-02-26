@@ -1,10 +1,11 @@
-viewsModule.config(['$routeProvider', function($routeProvider) {
+angular.module('ccAppViews')
+.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when("/", {
 		templateUrl : "./home/home.html",
 		controller : 'HomeCtrl'
 	});
-}]);
+}])
 
-viewsModule.controller('HomeCtrl', [function(){
+.controller('HomeCtrl', [function(){
 	console.log("We're home");
 }]);
