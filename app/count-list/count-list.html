@@ -1,9 +1,7 @@
 <p>List of countries</p>
 <!-- Will use ng-repeat here. Most likely country in countries, from what we get back.  -->
-<ul>
-   <li><a href="#!/count-detail">Country 1</a></li>
-   <li><a href="#!/count-detail">Country 2</a></li>
-   <li><a href="#!/count-detail">Country 3</a></li>
+<ul ng-repeat="country in countries">
+   <li><a href="#!/count-detail">{{ country.countryName }}</a></li>
 </ul>
 
 <a href="#!/">Home</a>

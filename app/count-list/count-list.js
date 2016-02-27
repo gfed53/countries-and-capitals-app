@@ -6,7 +6,13 @@ angular.module('ccAppViews')
 	});
 }])
 
-.controller('CountListCtrl', ['ccBrowseCountries', function(ccBrowseCountries){
+.controller('CountListCtrl', ['$scope', 'ccBrowseCountries', function($scope, ccBrowseCountries){
 	console.log("This is the list of countries");
-	ccBrowseCountries();
+	ccBrowseCountries()
+	.then(function(countries){
+		$scope.countries = countries.geonames;
+		$scope.country1 = countries.geonames[0].countryName;
+		console.log($scope.countries);
+		console.log($scope.country1);
+	});
 }]);

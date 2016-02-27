@@ -6,12 +6,12 @@ angular.module('ccLibrary', [])
 .factory('ccRequest', ['$http', '$q', 'CC_API_PREFIX', 'CC_USERNAME', function($http, $q, CC_API_PREFIX, CC_USERNAME){
 	return function(type){
 		console.log("Running request");
-		var reqParams = angular.extend({}, {username: CC_USERNAME}),
+		var reqParams = angular.extend({}, {username: CC_USERNAME, format: 'json'}),
 		reqUrl = CC_API_PREFIX+'/'+type+'?';
 		return $http.get(reqUrl, {params: reqParams})
 		.then(function(response){
-			// return $q.when(response.data);
-			console.log(response.data);
+			return $q.when(response.data);
+			console.log("loaded");
 		});
 	};
 }])
@@ -19,11 +19,13 @@ angular.module('ccLibrary', [])
 .factory('ccBrowseCountries', ['ccRequest', function(ccRequest){
 	console.log("Running browse");
 	return function(){
-		var type = 'countryInfo';
+		var type = 'countryInfoJSON';
 		return ccRequest(type);
 		}
 	}
 ])
+
+// .factory('cc')
 
 // .factory('simpleBrowse', [function(){
 // 	var url = "api.geonames.org/countryInfo?",
