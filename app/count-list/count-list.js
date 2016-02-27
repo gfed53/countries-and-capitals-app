@@ -6,6 +6,7 @@ angular.module('ccAppViews')
 	});
 }])
 
-.controller('CountListCtrl', [function(){
+.controller('CountListCtrl', ['ccBrowseCountries', function(ccBrowseCountries){
 	console.log("This is the list of countries");
+	ccBrowseCountries();
 }]);
