@@ -4,9 +4,9 @@ angular.module('ccLibrary', [])
 .constant('CC_USERNAME', 'gfedz4321')
 
 .factory('ccRequest', ['$http', '$q', 'CC_API_PREFIX', 'CC_USERNAME', function($http, $q, CC_API_PREFIX, CC_USERNAME){
-	return function(type){
+	return function(type, params){
 		console.log("Running request");
-		var reqParams = angular.extend({}, {username: CC_USERNAME, format: 'json'}),
+		var reqParams = angular.extend({}, params, {username: CC_USERNAME}),
 		reqUrl = CC_API_PREFIX+'/'+type+'?';
 		return $http.get(reqUrl, {params: reqParams})
 		.then(function(response){
@@ -19,11 +19,23 @@ angular.module('ccLibrary', [])
 .factory('ccBrowseCountries', ['ccRequest', function(ccRequest){
 	console.log("Running browse");
 	return function(){
-		var type = 'countryInfoJSON';
-		return ccRequest(type);
-		}
+		var type = 'countryInfoJSON',
+		params = {cache : true};
+		return ccRequest(type, params);
+		};
 	}
 ])
+
+.factory('ccCountryDetail', ['ccRequest', function(ccRequest, country){
+	console.log("Getting country's details");
+	return function(){
+		var type = 'countryInfoJSON',
+		params = {
+			country : country
+		}
+		return ccRequest(type, params);
+	};
+}])
 
 // .factory('cc')
 

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  },
   "devDependencies": {
     "gulp": "^3.9.1"
   },

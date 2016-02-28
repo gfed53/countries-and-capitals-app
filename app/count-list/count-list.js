@@ -1,6 +1,6 @@
 angular.module('ccAppViews')
 .config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when("/count-list", {
+	$routeProvider.when("/countries", {
 		templateUrl : "./count-list/count-list.html",
 		controller : 'CountListCtrl'
 	});
@@ -11,8 +11,6 @@ angular.module('ccAppViews')
 	ccBrowseCountries()
 	.then(function(countries){
 		$scope.countries = countries.geonames;
-		$scope.country1 = countries.geonames[0].countryName;
 		console.log($scope.countries);
-		console.log($scope.country1);
 	});
 }]);
