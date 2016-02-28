@@ -1,1 +1,1 @@
-angular.module('ccAppViews', ['ngRoute', 'ccLibrary']);
+angular.module('ccAppViews', ['ngRoute', 'ccLibrary', 'ccHistory']);

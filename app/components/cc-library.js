@@ -16,46 +16,40 @@ angular.module('ccLibrary', [])
 	};
 }])
 
+// .factory('ccCountries', [function(){
+// 	var countries;
+// 	return {
+// 		set: function(countries){
+// 			countries = countries;
+// 		},
+
+// 		get: function(){
+// 			return countries;
+// 		}
+// 	};
+	
+// }])
+
 .factory('ccBrowseCountries', ['ccRequest', function(ccRequest){
 	console.log("Running browse");
 	return function(){
 		var type = 'countryInfoJSON',
 		params = {cache : true};
 		return ccRequest(type, params);
-		};
-	}
-])
+	};
+}])
 
-.factory('ccCountryDetail', ['ccRequest', function(ccRequest, country){
+.factory('ccCountryDetail', ['ccRequest', function(ccRequest){
 	console.log("Getting country's details");
-	return function(){
+	return function(country){
 		var type = 'countryInfoJSON',
 		params = {
 			country : country
-		}
+		};
 		return ccRequest(type, params);
 	};
 }])
 
-// .factory('cc')
 
-// .factory('simpleBrowse', [function(){
-// 	var url = "api.geonames.org/countryInfo?",
-// 		params = {
-// 			username: "gfedz4321",
-// 			format: 'json'
-// 		};
 
-// 		$http({
-// 			method: 'GET',
-// 			url: url,
-// 			params: params
-// 		})
-// 		.then(function(response){
-// 			console.log();
-			
-// 		},
-// 		function(response){
-// 			alert('error');
-// 		});
-// }]);
+
