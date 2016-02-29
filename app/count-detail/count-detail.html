@@ -1,4 +1,9 @@
-<p>Details of selected country. {{ country.countryName }}. {{ country.countryCode }}</p>
+<h2>{{ country.countryName }}</h2> 
+<ul>
+	<li>Area in square kilometers: {{ country.areaInSqKm | number : 0 }}</li>
+	<li>Captial: {{ country.capital }}</li>
+	<li>Population of Capital: {{ capital.population | number : 0 }}</li>
+</ul>
 
 <a href="#!/countries">Browse Countries</a>
 <a href="#!/">Home</a>

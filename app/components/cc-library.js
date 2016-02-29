@@ -39,6 +39,22 @@ angular.module('ccLibrary', [])
 	};
 }])
 
+//We will use 'search' instead to get what we want
+.factory('ccCapDetail', ['ccRequest', function(ccRequest){
+	console.log("Getting country's details");
+	return function(capital, country){
+		var endpoint = 'search',
+		params = {
+			q : capital,
+			country : country,
+			name_equals : capital,
+			type : "json",
+			isNameRequired : true
+		};
+		return ccRequest(endpoint, params);
+	};
+}])
+
 .factory('ccCountryDetail', ['ccRequest', function(ccRequest){
 	console.log("Getting country's details");
 	return function(country){
