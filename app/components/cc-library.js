@@ -56,7 +56,7 @@ angular.module('ccLibrary', [])
 }])
 
 .factory('ccCountryDetail', ['ccRequest', function(ccRequest){
-	console.log("Getting country's details");
+	console.log("Getting captial's details");
 	return function(country){
 		var type = 'countryInfoJSON',
 		params = {
@@ -65,6 +65,19 @@ angular.module('ccLibrary', [])
 		return ccRequest(type, params);
 	};
 }])
+
+.factory('ccNeighborDetail', ['ccRequest', function(ccRequest){
+	console.log("Getting country's neighbors");
+	return function(country){
+		var type = 'neighboursJSON',
+		params = {
+			country : country
+		};
+		return ccRequest(type, params);
+	};
+}])
+
+
 
 
 
