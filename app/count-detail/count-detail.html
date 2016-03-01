@@ -1,9 +1,11 @@
 <h2>{{ country.countryName }}</h2> 
 <ul>
+	<li>Population of Country: {{ country.population | number : 0 }}</li>
 	<li>Area in square kilometers: {{ country.areaInSqKm | number : 0 }}</li>
 	<li>Captial: {{ country.capital }}</li>
 	<li>Population of Capital: {{ capital.population | number : 0 }}</li>
 </ul>
+<img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{ country.countryCode }}.png" />
 <img ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="">
 <h3>{{ neighbors.length }} Neighboring Countries</h3>
 <ul ng-repeat="neighbor in neighbors">
