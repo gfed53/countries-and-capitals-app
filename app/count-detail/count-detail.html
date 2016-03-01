@@ -4,8 +4,8 @@
 	<li>Captial: {{ country.capital }}</li>
 	<li>Population of Capital: {{ capital.population | number : 0 }}</li>
 </ul>
-
-<h3>Neighboring Countries</h3>
+<img ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="">
+<h3>{{ neighbors.length }} Neighboring Countries</h3>
 <ul ng-repeat="neighbor in neighbors">
 	<li><a href="#!/countries/{{ neighbor }}">{{ neighbor.countryName}}</a></li>
 </ul>
