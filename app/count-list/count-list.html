@@ -1,9 +1,28 @@
-<h2>List of countries</h2>
 <a class="btn btn-default" href="#!/">Home</a>
+<h2>List of countries</h2>
 
-<ul ng-repeat="country in countries">
+<div class="row header-row">
+	<div class="col-md-2">Name</div>
+	<div class="col-md-2">Country Code</div>
+	<div class="col-md-2">Capital</div>
+	<div class="col-md-2">Area in sq km</div>
+	<div class="col-md-2">Population</div>
+	<div class="col-md-2">Continent</div>
+</div>
+<div ng-repeat="country in countries" class="row">
+	<div class="col-md-2">
+		<a href="#!/countries/{{ country }}">{{ country.countryName }}</a>
+	</div>
+	<div class="col-md-2">{{ country.countryCode }}</div>
+	<div class="col-md-2">{{ country.capital }}</div>
+	<div class="col-md-2">{{ country.areaInSqKm }}</div>
+	<div class="col-md-2">{{ country.population }}</div>
+	<div class="col-md-2">{{ country.continent }}</div>
+</div>
+
+<!-- <ul ng-repeat="country in countries">
    <li><a href="#!/countries/{{ country }}">{{ country.countryName }}</a></li>
-</ul>
+</ul> -->
 
 
 

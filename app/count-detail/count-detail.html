@@ -5,12 +5,15 @@
 	<li>Captial: {{ country.capital }}</li>
 	<li>Population of Capital: {{ capital.population | number : 0 }}</li>
 </ul>
-<img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{ country.countryCode }}.png" />
-<img ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="">
+
 <h3>{{ neighbors.length }} Neighboring Countries</h3>
 <ul class="neighbors" ng-repeat="neighbor in neighbors">
 	<li><a href="#!/countries/{{ neighbor }}">{{ neighbor.countryName}}</a></li>
 </ul>
+<div>
+	<img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{ country.countryCode }}.png" />
+	<img ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="">
+</div>
 <div>
 	<a class="btn btn-default" href="#!/countries">Browse Countries</a>
 	<a class="btn btn-default" href="#!/">Home</a>

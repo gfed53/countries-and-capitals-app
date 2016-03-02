@@ -5,6 +5,8 @@
 h1 {
 	text-align: center;
 	font-size: 3.5em;
+	padding: 1em;
+	border-bottom: 1px solid grey;
 }
 
 .animate-view {
@@ -13,13 +15,32 @@ h1 {
 	margin: auto;
 }
 
-h2, ul, img {
-	margin: 2em;
-}
-
 .btn-default {
 	text-align: center;
-	margin: auto;
+	margin: 1.5em auto;
+}
+
+/*count-list*/
+.header-row {
+	font-weight: bold;
+}
+
+.col-md-2 {
+	border: 1px solid grey;
+}
+
+/*count-detail*/
+h3 {
+	font-size: 1.5em;
+}
+
+h2, h3, ul {
+	margin-bottom: 1.5em;
+}
+
+img {
+	margin: 2em;
+	max-width: 35em;
 }
 
 ul {
