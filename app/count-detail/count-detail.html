@@ -8,9 +8,10 @@
 <img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{ country.countryCode }}.png" />
 <img ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="">
 <h3>{{ neighbors.length }} Neighboring Countries</h3>
-<ul ng-repeat="neighbor in neighbors">
+<ul class="neighbors" ng-repeat="neighbor in neighbors">
 	<li><a href="#!/countries/{{ neighbor }}">{{ neighbor.countryName}}</a></li>
 </ul>
-
-<a href="#!/countries">Browse Countries</a>
-<a href="#!/">Home</a>
+<div>
+	<a class="btn btn-default" href="#!/countries">Browse Countries</a>
+	<a class="btn btn-default" href="#!/">Home</a>
+</div>
