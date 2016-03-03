@@ -15,8 +15,8 @@
 	</div>
 	<div class="col-md-2">{{ country.countryCode }}</div>
 	<div class="col-md-2">{{ country.capital }}</div>
-	<div class="col-md-2">{{ country.areaInSqKm }}</div>
-	<div class="col-md-2">{{ country.population }}</div>
+	<div class="col-md-2">{{ country.areaInSqKm | number : 0 }}</div>
+	<div class="col-md-2">{{ country.population | number : 0 }}</div>
 	<div class="col-md-2">{{ country.continent }}</div>
 </div>
 

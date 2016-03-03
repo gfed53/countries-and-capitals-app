@@ -61,6 +61,7 @@ ul {
 
 .loading {
   position:relative;
+  background:rgba(255,255,255,0.9) no-repeat center center;
   height:100%;
 }
 .loading:before {
