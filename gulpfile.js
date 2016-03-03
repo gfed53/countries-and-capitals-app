@@ -43,7 +43,7 @@ gulp.task('usemin', [ 'copy' ], function(){
 gulp.task('images', function() {
   return gulp.src('app/images/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('build/images'));
 });
 
 gulp.task('build', ['usemin', 'images' ]);

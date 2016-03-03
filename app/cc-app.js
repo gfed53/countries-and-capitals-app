@@ -6,7 +6,7 @@ angular.module('ccApp', ['ccAppViews', 'ngRoute', 'ngAnimate'])
     })
 }])
 
-.run(function($rootScope, $location, $timeout) {
+.run(['$rootScope', '$location', '$timeout', function($rootScope, $location, $timeout) {
 	    $rootScope.$on('$routeChangeStart', function() {
 	        $rootScope.isLoading = true;
 	    });
@@ -15,5 +15,5 @@ angular.module('ccApp', ['ccAppViews', 'ngRoute', 'ngAnimate'])
 	        $rootScope.isLoading = false;
 	      }, 1000);
 	    });
-	});
+	}]);
   
