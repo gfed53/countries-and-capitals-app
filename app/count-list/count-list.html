@@ -1,6 +1,6 @@
 <a class="btn btn-default" href="#!/">Home</a>
 <h2>List of countries</h2>
-
+<input type="text" class="form-control search-form" placeholder="Filter by country" ng-model="search">
 <div class="row header-row">
 	<div class="col-md-2">Name</div>
 	<div class="col-md-2">Country Code</div>
@@ -9,7 +9,7 @@
 	<div class="col-md-2">Population</div>
 	<div class="col-md-2">Continent</div>
 </div>
-<div ng-repeat="country in countries" class="row">
+<div ng-repeat="country in countries | filter:search" class="row">
 	<div class="col-md-2">
 		<a href="#!/countries/{{ country }}">{{ country.countryName }}</a>
 	</div>

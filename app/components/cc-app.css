@@ -21,9 +21,25 @@ h1 {
 	margin: 1.5em auto;
 }
 
+footer p {
+	text-align: right;
+	font-weight: 500;
+}
+
+/*home*/
+.info {
+	font-weight: 400;
+	font-style: italic;
+	font-size: 1.2em;
+}
+
 /*count-list*/
 .header-row {
 	font-weight: bold;
+}
+
+.search-form {
+	margin-bottom: 1em;
 }
 
 .col-md-2 {
@@ -61,7 +77,7 @@ ul {
 
 .loading {
   position:relative;
-  background:rgba(255,255,255,0.9) no-repeat center center;
+  /*background:rgba(255,255,255,0.9) no-repeat center center;*/
   height:100%;
 }
 .loading:before {
