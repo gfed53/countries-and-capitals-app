@@ -1,4 +1,7 @@
 angular.module('ccLibrary', [])
+.run([ '$http', function($http){
+    $http.defaults.cache = true;
+  }])
 
 .constant('CC_API_PREFIX', 'http://api.geonames.org/')
 .constant('CC_USERNAME', 'gfedz4321')
@@ -16,26 +19,11 @@ angular.module('ccLibrary', [])
 	};
 }])
 
-// .factory('ccCountries', [function(){
-// 	var countries;
-// 	return {
-// 		set: function(countries){
-// 			countries = countries;
-// 		},
-
-// 		get: function(){
-// 			return countries;
-// 		}
-// 	};
-	
-// }])
-
 .factory('ccBrowseCountries', ['ccRequest', function(ccRequest){
 	console.log("Running browse");
 	return function(){
-		var type = 'countryInfoJSON',
-		params = {cache : true};
-		return ccRequest(type, params);
+		var type = 'countryInfoJSON';
+		return ccRequest(type);
 	};
 }])
 
@@ -77,7 +65,19 @@ angular.module('ccLibrary', [])
 	};
 }])
 
+// .factory('ccCountries', [function(){
+// 	var countries;
+// 	return {
+// 		set: function(countries){
+// 			countries = countries;
+// 		},
 
+// 		get: function(){
+// 			return countries;
+// 		}
+// 	};
+	
+// }])
 
 
 
