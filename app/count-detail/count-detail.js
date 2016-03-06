@@ -14,7 +14,6 @@ angular.module('ccAppViews')
 .controller('CountDetailCtrl', ['$scope', '$route', 'ccCountryDetail', 'ccCapDetail', 'ccNeighborDetail', function($scope, $route, ccCountryDetail, ccCapDetail, ccNeighborDetail){
 	$scope.country = $route.current.params.country;
 	$scope.countryObj = JSON.parse($scope.country);
-	//We're using the params of the neighbor, that's why we're not getting capital back.
 	console.log($scope.countryObj);
 
 	ccCountryDetail($scope.countryObj.countryCode)
