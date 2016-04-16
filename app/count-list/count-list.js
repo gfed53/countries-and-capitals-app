@@ -7,7 +7,7 @@ angular.module('ccAppViews')
 }])
 
 .controller('CountListCtrl', ['$scope', 'ccBrowseCountries', function($scope, ccBrowseCountries){
-	console.log("This is the list of countries");
+	console.log("This is the list of countries: "+ccBrowseCountries());
 	ccBrowseCountries()
 	.then(function(countries){
 		$scope.countries = countries.geonames;
