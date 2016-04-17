@@ -1,28 +1,21 @@
 <a class="btn btn-default" href="#!/">Home</a>
 <h2>List of countries</h2>
 <input type="text" class="form-control search-form" placeholder="Filter by country" ng-model="search">
-<div class="row header-row">
-	<div class="col-md-2">Name</div>
-	<div class="col-md-2">Country Code</div>
-	<div class="col-md-2">Capital</div>
-	<div class="col-md-2">Area in sq km</div>
-	<div class="col-md-2">Population</div>
-	<div class="col-md-2">Continent</div>
-</div>
-<div ng-repeat="country in countries | filter:search" class="row">
-	<div class="col-md-2">
-		<a href="#!/countries/{{ country }}">{{ country.countryName }}</a>
+<div ng-repeat="country in countries | filter:search" class="row count-list">
+	<div class="col-md-6 country-name">
+		<img class="list-flag" ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="Flag not found">
+		<h3 class="list-header">
+			<a href="#!/countries/{{ country }}">{{ country.countryName }}</a>
+		</h3>
 	</div>
-	<div class="col-md-2">{{ country.countryCode }}</div>
-	<div class="col-md-2">{{ country.capital }}</div>
-	<div class="col-md-2">{{ country.areaInSqKm | number : 0 }}</div>
-	<div class="col-md-2">{{ country.population | number : 0 }}</div>
-	<div class="col-md-2">{{ country.continent }}</div>
+	<div class="col-md-6 country-blurb">
+		<p class="first-line"><strong>Code:</strong> {{ country.countryCode }}</p>
+		<p><strong>Captial:</strong> {{ country.capital }}</p>
+		<p><strong>Area in sq km:</strong> {{ country.areaInSqKm | number : 0 }}</p>
+		<p><strong>Population:</strong> {{ country.population | number : 0 }}</p>
+		<p><strong>Continent:</strong> {{ country.continent }}</p>
+	</div>
 </div>
-
-<!-- <ul ng-repeat="country in countries">
-   <li><a href="#!/countries/{{ country }}">{{ country.countryName }}</a></li>
-</ul> -->
 
 
 

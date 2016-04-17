@@ -34,16 +34,25 @@ footer p {
 }
 
 /*count-list*/
-.header-row {
-	font-weight: bold;
-}
-
 .search-form {
 	margin-bottom: 1em;
 }
 
-.col-md-2 {
+.col-md-6{
 	border: 1px solid grey;
+	height: 11em;
+}
+
+.country-name {
+	text-align: center;
+}
+
+.first-line {
+	margin-top: 0.5em;
+}
+
+.list-flag {
+	width: 3em;
 }
 
 /*count-detail*/
@@ -107,6 +116,17 @@ ul {
 .animate-view.ng-enter.ng-enter-active { opacity:1; }
 .animate-view.ng-leave { opacity:1; z-index:99; }
 .animate-view.ng-leave.ng-leave-active { opacity:0; }
+
+@media screen and (max-width: 990px) {
+	.country-name {
+		height: 10em;
+	}
+	.list-flag {
+		margin: 1em;
+		width: 5em;
+		max-height: 3.5em;
+	}
+}
 
 
 

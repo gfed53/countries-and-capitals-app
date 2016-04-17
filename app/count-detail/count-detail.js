@@ -15,7 +15,7 @@ angular.module('ccAppViews')
 	$scope.country = $route.current.params.country;
 	$scope.countryObj = JSON.parse($scope.country);
 	console.log($scope.countryObj);
-
+	
 	ccCountryDetail($scope.countryObj.countryCode)
 	.then(function(country){
 			$scope.country = country.geonames[0];
@@ -29,21 +29,9 @@ angular.module('ccAppViews')
 		}
 	);
 
-	//This is running simultaniously with ccCountryDetail, that's why $scope.country won't be changed before this runs.
-	// ccCapDetail($scope.countryObj.capital, $scope.countryObj.countryCode)
-	// .then(function(capital){
-	// 	console.log(capital);
-	// 	if(capital.geonames){
-	// 		$scope.capital = capital.geonames[0];
-	// 	}
-	// 	console.log($scope.capital);
-	// });
-
 	ccNeighborDetail($scope.countryObj.countryCode)
 	.then(function(neighbors){
 		console.log(neighbors);
 		$scope.neighbors = neighbors.geonames;
 	});
-
-	console.log("This is a detailed view of the selected country");
 }]);
