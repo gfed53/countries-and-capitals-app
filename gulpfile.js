@@ -1,5 +1,6 @@
 var gulp = require('gulp'); 
 var connect = require('gulp-connect');
+var del = require('del');
 var uglify = require('gulp-uglify');
 var ngmin = require('gulp-ngmin');
 var minifyHtml = require('gulp-minify-html');
@@ -21,8 +22,7 @@ var paths = {
 }
 
 gulp.task('clean', function(){
-  gulp.src( paths.build, { read: false } )
-    .pipe(clean());
+  del(paths.build);
 });
 
 gulp.task('copy', [ 'clean' ], function() {

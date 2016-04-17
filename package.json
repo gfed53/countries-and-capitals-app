@@ -7,7 +7,11 @@
     "bootstrap": "^3.3.6"
   },
   "devDependencies": {
+    "angular": "^1.5.3",
+    "angular-animate": "^1.5.3",
     "angular-mocks": "^1.5.0",
+    "angular-route": "^1.5.3",
+    "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.1",
     "gulp-connect": "^3.1.0",
@@ -19,6 +23,7 @@
     "gulp-uglify": "^1.5.3",
     "gulp-usemin": "^0.3.21",
     "jasmine-core": "^2.4.1",
+    "jquery": "^2.2.3",
     "karma": "^0.13.21",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7"
