@@ -38,6 +38,10 @@ footer p {
 	margin-bottom: 1em;
 }
 
+#sort-by {
+	margin-bottom: 0.5em;
+}
+
 .col-md-6{
 	border: 1px solid grey;
 	height: 11em;

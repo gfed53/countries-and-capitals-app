@@ -1,7 +1,13 @@
 <a class="btn btn-default" href="#!/">Home</a>
 <h2>List of countries</h2>
 <input type="text" class="form-control search-form" placeholder="Filter by country" ng-model="search">
-<div ng-repeat="country in countries | filter:search" class="row count-list">
+<h3 id="sort-by">Sort by..</h3>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" ng-click="order('countryName')" class="btn btn-default">Name</button>
+  <button type="button" ng-click="order('areaInSqKm')" class="btn btn-default">Area in Sq Km</button>
+  <button type="button" ng-click="order('population')" class="btn btn-default">Population</button>
+</div>
+<div ng-repeat="country in countries | filter:search | orderBy:predicate:reverse" class="row count-list">
 	<div class="col-md-6 country-name">
 		<img class="list-flag" ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="Flag not found">
 		<h3 class="list-header">

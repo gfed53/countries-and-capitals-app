@@ -13,7 +13,17 @@ angular.module('ccAppViews')
 	ccBrowseCountries()
 	.then(function(countries){
 		$scope.countries = countries.geonames;
+		angular.forEach($scope.countries, function(item){
+			item.areaInSqKm = parseFloat(item.areaInSqKm);
+			item.population = parseFloat(item.population);
+		});
 		console.log($scope.countries);
+		$scope.predicate = "countryName";
+		$scope.reverse = false;
+		$scope.order = function(predicate){
+			    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+    			$scope.predicate = predicate;
+		}
 	});
 }])
 
