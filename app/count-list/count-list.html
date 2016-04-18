@@ -3,25 +3,34 @@
 <input type="text" class="form-control search-form" placeholder="Filter by country" ng-model="search">
 <h3 id="sort-by">Sort by..</h3>
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" ng-click="order('countryName')" class="btn btn-default">Name</button>
-  <button type="button" ng-click="order('areaInSqKm')" class="btn btn-default">Area in Sq Km</button>
-  <button type="button" ng-click="order('population')" class="btn btn-default">Population</button>
+	<button type="button" ng-click="order('countryName')" class="btn btn-default">
+		<span ng-show="predicate === 'countryName'" ng-if="!reverse" class="glyphicon glyphicon-triangle-top"></span>
+		<span ng-show="predicate === 'countryName'" ng-if="reverse" class="glyphicon glyphicon-triangle-bottom"></span>
+		Name
+	</button>
+	<button type="button" ng-click="order('areaInSqKm')" class="btn btn-default">
+		<span ng-show="predicate === 'areaInSqKm'" ng-if="!reverse" class="glyphicon glyphicon-triangle-top"></span>
+		<span ng-show="predicate === 'areaInSqKm'" ng-if="reverse" class="glyphicon glyphicon-triangle-bottom"></span>
+		Area in Sq Km
+	</button>
+	<button type="button" ng-click="order('population')" class="btn btn-default">
+		<span ng-show="predicate === 'population'" ng-if="!reverse" class="glyphicon glyphicon-triangle-top"></span>
+		<span ng-show="predicate === 'population'" ng-if="reverse" class="glyphicon glyphicon-triangle-bottom"></span>
+		Population
+	</button>
 </div>
-<div ng-repeat="country in countries | filter:search | orderBy:predicate:reverse" class="row count-list">
-	<div class="col-md-6 country-name">
-		<img class="list-flag" ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="Flag not found">
-		<h3 class="list-header">
-			<a href="#!/countries/{{ country }}">{{ country.countryName }}</a>
-		</h3>
-	</div>
-	<div class="col-md-6 country-blurb">
-		<p class="first-line"><strong>Code:</strong> {{ country.countryCode }}</p>
-		<p><strong>Captial:</strong> {{ country.capital }}</p>
-		<p><strong>Area in sq km:</strong> {{ country.areaInSqKm | number : 0 }}</p>
-		<p><strong>Population:</strong> {{ country.population | number : 0 }}</p>
-		<p><strong>Continent:</strong> {{ country.continent }}</p>
-	</div>
-</div>
+<uib-accordion>
+	<uib-accordion-group ng-repeat="country in countries | filter:search | orderBy:predicate:reverse" heading="{{ country.countryName }}">
+		<div class="inner-content">
+			<p><strong>Captial:</strong> {{ country.capital }}</p>
+			<p><strong>Area in sq km:</strong> {{ country.areaInSqKm | number : 0 }}</p>
+			<p><strong>Population:</strong> {{ country.population | number : 0 }}</p>
+			<p><strong>Continent:</strong> {{ country.continent }}</p>
+			<a class="more-info" href="#!/countries/{{ country }}">More Info..</a>
+			<img class="list-flag" ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" alt="Flag not found">
+		</div>
+	</uib-accordion-group>
+</uib-accordion>
 
 
 
