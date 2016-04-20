@@ -7,5 +7,4 @@ angular.module('ccAppViews')
 }])
 
 .controller('HomeCtrl', [function(){
-	console.log("We're home");
 }]);

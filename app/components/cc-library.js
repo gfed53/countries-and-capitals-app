@@ -8,28 +8,23 @@ angular.module('ccLibrary', [])
 
 .factory('ccRequest', ['$http', '$q', 'CC_API_PREFIX', 'CC_USERNAME', function($http, $q, CC_API_PREFIX, CC_USERNAME){
 	return function(type, params){
-		console.log("Running request");
 		var reqParams = angular.extend({}, params, {username: CC_USERNAME}),
 		reqUrl = CC_API_PREFIX+'/'+type+'?';
 		return $http.get(reqUrl, {params: reqParams})
 		.then(function(response){
 			return $q.when(response.data);
-			console.log("loaded");
 		});
 	};
 }])
 
 .factory('ccBrowseCountries', ['ccRequest', function(ccRequest){
-	console.log("Running browse");
 	return function(){
 		var type = 'countryInfoJSON';
 		return ccRequest(type);
 	};
 }])
 
-//We will use 'search' instead to get what we want
 .factory('ccCapDetail', ['ccRequest', function(ccRequest){
-	console.log("Getting country's details");
 	return function(capital, country){
 		var endpoint = 'search',
 		params = {
@@ -44,7 +39,6 @@ angular.module('ccLibrary', [])
 }])
 
 .factory('ccCountryDetail', ['ccRequest', function(ccRequest){
-	console.log("Getting captial's details");
 	return function(country){
 		var type = 'countryInfoJSON',
 		params = {
@@ -55,7 +49,6 @@ angular.module('ccLibrary', [])
 }])
 
 .factory('ccNeighborDetail', ['ccRequest', function(ccRequest){
-	console.log("Getting country's neighbors");
 	return function(country){
 		var type = 'neighboursJSON',
 		params = {
@@ -64,20 +57,6 @@ angular.module('ccLibrary', [])
 		return ccRequest(type, params);
 	};
 }])
-
-// .factory('ccCountries', [function(){
-// 	var countries;
-// 	return {
-// 		set: function(countries){
-// 			countries = countries;
-// 		},
-
-// 		get: function(){
-// 			return countries;
-// 		}
-// 	};
-	
-// }])
 
 
 
