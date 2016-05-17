@@ -7,8 +7,8 @@
 </ul>
 
 <h3>{{ neighbors.length }} Neighboring Countries</h3>
-<ul class="neighbors" ng-repeat="neighbor in neighbors">
-	<li><a href="#!/countries/{{ neighbor }}">{{ neighbor.countryName}}</a></li>
+<ul class="neighbors">
+	<li ng-repeat="neighbor in neighbors"><a href="#!/countries/{{ neighbor }}">{{ neighbor.countryName}}</a></li>
 </ul>
 <div>
 	<img id='myImage' ng-src="http://www.geonames.org/img/country/250/{{ country.countryCode }}.png" />
