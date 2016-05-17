@@ -2,9 +2,7 @@ angular.module('ccAppViews')
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when("/countries", {
 		templateUrl : "./count-list/count-list.html",
-		controller : 'CountListCtrl',
-		resolve: {
-		}
+		controller : 'CountListCtrl'
 	});
 }])
 
@@ -24,7 +22,3 @@ angular.module('ccAppViews')
 		}
 	});
 }])
-
-.run(function(){
-
-})
