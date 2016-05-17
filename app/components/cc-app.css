@@ -4,11 +4,21 @@
 	box-sizing: border-box;
 }
 
+header {
+	border-bottom: 1px solid grey;
+	padding-bottom: 1em;
+	margin-bottom: 2em;
+}
+
 h1 {
 	text-align: center;
 	font-size: 3.5em;
-	padding: 1em;
-	border-bottom: 1px solid grey;
+	padding: 0.5em;
+}
+
+.credit {
+	text-align: right;
+	font-weight: 500;
 }
 
 .animate-view {
@@ -29,11 +39,6 @@ h1 {
 .btn-default {
 	text-align: center;
 	/*margin: 1.5em auto;*/
-}
-
-footer p {
-	text-align: right;
-	font-weight: 500;
 }
 
 /*home*/
@@ -84,7 +89,7 @@ h2, h3, ul {
 
 img {
 	margin: 2em;
-	max-width: 35em;
+	max-width: 80%;
 }
 
 ul {
@@ -140,10 +145,34 @@ ul {
 }
 
 @media screen and (max-width: 450px) {
-	
+	h1 {
+		font-size: 2.5em;
+	}
+
+	.credit {
+		text-align: center;
+		font-weight: 400;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	h3 {
+		font-size: 1em;
+	}
+
 	.btn-sort {
 		display: block;
 		width: 100%;
+	}
+
+	img {
+		/*max-width: 80%;*/
+	}
+
+	.neighbors {
+		display: block;
 	}
 }
 
