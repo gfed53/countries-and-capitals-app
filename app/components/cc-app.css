@@ -14,12 +14,21 @@ h1 {
 .animate-view {
 	max-width: 75%;
 	margin: auto;
+}
 
+.sort-group {
+	margin-bottom: 1.5em;
+	width: 100%;
+}
+
+.btn-sort {
+	width: 33.33333%;
+	margin: -2px;
 }
 
 .btn-default {
 	text-align: center;
-	margin: 1.5em auto;
+	/*margin: 1.5em auto;*/
 }
 
 footer p {
@@ -127,6 +136,14 @@ ul {
 @media screen and (max-width: 990px) {
 	.list-flag {
 		margin: 1em;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	
+	.btn-sort {
+		display: block;
+		width: 100%;
 	}
 }
 
