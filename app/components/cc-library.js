@@ -31,7 +31,7 @@ angular.module('ccLibrary', [])
 			q : capital,
 			country : country,
 			name_equals : capital,
-			type : "json",
+			type : 'json',
 			isNameRequired : true
 		};
 		return ccRequest(endpoint, params);
