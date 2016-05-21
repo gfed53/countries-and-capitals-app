@@ -1,7 +1,7 @@
 angular.module('ccAppViews')
 .config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when("/", {
-		templateUrl : "./home/home.html",
+	$routeProvider.when('/', {
+		templateUrl : './home/home.html',
 		controller : 'HomeCtrl'
 	});
 }])
