@@ -38,7 +38,6 @@ h1 {
 
 .btn-default {
 	text-align: center;
-	/*margin: 1.5em auto;*/
 }
 
 /*home*/
@@ -126,7 +125,7 @@ ul {
 
 .animate-view-container { position:relative; min-height: 100%; }
 .animate-view {
-    transition:1s linear all;
+    transition:700ms linear all;
     position:absolute;
     top:0;
     left:0;
@@ -167,10 +166,6 @@ ul {
 	.btn-sort {
 		display: block;
 		width: 100%;
-	}
-
-	img {
-		/*max-width: 80%;*/
 	}
 
 	.neighbors li {

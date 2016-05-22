@@ -1,9 +1,9 @@
 angular.module('ccAppViews')
 .config(['$routeProvider', function($routeProvider){
 	$routeProvider
-	.when("/countries/:country", {
-		templateUrl : "./count-detail/count-detail.html",
-		controller : "CountDetailCtrl",
+	.when('/countries/:country', {
+		templateUrl : './count-detail/count-detail.html',
+		controller : 'CountDetailCtrl',
 	});
 }])
 

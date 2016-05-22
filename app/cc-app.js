@@ -13,7 +13,7 @@ angular.module('ccApp', ['ccAppViews', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
 	    $rootScope.$on('$routeChangeSuccess', function() {
 	      $timeout(function() {
 	        $rootScope.isLoading = false;
-	      }, 1000);
+	      }, 700);
 	    });
 	}]);
   

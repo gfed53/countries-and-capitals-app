@@ -1,7 +1,7 @@
 angular.module('ccAppViews')
 .config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when("/countries", {
-		templateUrl : "./count-list/count-list.html",
+	$routeProvider.when('/countries', {
+		templateUrl : './count-list/count-list.html',
 		controller : 'CountListCtrl'
 	});
 }])
@@ -14,7 +14,7 @@ angular.module('ccAppViews')
 			item.areaInSqKm = parseFloat(item.areaInSqKm);
 			item.population = parseFloat(item.population);
 		});
-		$scope.predicate = "countryName";
+		$scope.predicate = 'countryName';
 		$scope.reverse = false;
 		$scope.order = function(predicate){
 			$scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
